@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: white;
+        }
+
+        /* Темная панель навигации */
+        .navbar {
+            background-color: #333;
+            padding: 15px 20px;
+            display: flex;
+            gap: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Кнопки-ссылки в панели */
+        .nav-button {
+            color: white;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-button:hover {
+            background-color: #555;
+        }
+
+        /* Основное содержимое */
+        .content {
+            padding: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* Активная страница */
+        .active {
+            background-color: #4CAF50;
+        }
+
+        .active:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <!-- Темная панель навигации -->
+    <div class="navbar">
+        <a href="/" class="nav-button {% if title == 'Главная' %}active{% endif %}">
+            Главная
+        </a>
+        <a href="/page1" class="nav-button {% if title == 'Страница 1' %}active{% endif %}">
+            Страница 1
+        </a>
+        <a href="/page2" class="nav-button {% if title == 'Страница 2' %}active{% endif %}">
+            Страница 2
+        </a>
+        <a href="/page3" class="nav-button {% if title == 'Страница 3' %}active{% endif %}">
+            Страница 3
+        </a>
+    </div>
+
+    <!-- Основное содержимое -->
+    <div class="content">
+        <h1>{{ title }}</h1>
+        <p>{{ content }}</p>
+    </div>
+</body>
+</html>
